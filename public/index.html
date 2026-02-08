@@ -20,7 +20,6 @@
       color: white;
     }
 
-    /* HERO */
     .hero {
       height: 65vh;
       display: flex;
@@ -59,7 +58,6 @@
       color: black;
     }
 
-    /* SECTION */
     .section {
       padding: 40px 20px 60px;
       max-width: 950px;
@@ -73,7 +71,6 @@
       letter-spacing: 1px;
     }
 
-    /* GRID */
     .grid {
       display: flex;
       justify-content: center;
@@ -81,7 +78,6 @@
       flex-wrap: wrap;
     }
 
-    /* CARD */
     .card {
       width: 240px;
       background: linear-gradient(180deg, #141414, #0f0f0f);
@@ -110,13 +106,6 @@
       font-size: 16px;
       margin-bottom: 6px;
       letter-spacing: 0.5px;
-    }
-
-    .price {
-      font-size: 14px;
-      color: #e7e7e7;
-      margin-bottom: 10px;
-      font-weight: 600;
     }
 
     .tag {
@@ -158,6 +147,7 @@
       font-weight: 700;
       cursor: pointer;
       transition: 0.2s;
+      margin-bottom: 6px;
     }
 
     button:hover {
@@ -171,6 +161,43 @@
       font-size: 12px;
     }
 
+    /* MODAL */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .modal-box {
+      background: #0b0b0b;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 25px;
+      max-width: 420px;
+      width: 100%;
+      position: relative;
+      color: white;
+      line-height: 1.6;
+    }
+
+    .close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close:hover {
+      color: white;
+    }
+
     @media (max-width: 600px) {
       .card {
         width: 90%;
@@ -181,51 +208,82 @@
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>THE CREASE CLUB</h1>
-      <p>Premium Motion Wallpapers • Members Only</p>
-      <button class="hero-btn" onclick="document.getElementById('products').scrollIntoView()">
-        Explore Drops
-      </button>
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section class="section" id="products">
-    <h2>Video Wallpapers</h2>
-
-    <div class="grid">
-
-      <!-- PRODUCT 1 -->
-      <div class="card">
-        <div class="lock">🔒</div>
-        <div class="badge">₹9</div>
-         <img src="https://i.postimg.cc/XY3MXd8y/Screenshot-2026-02-06-12-35-19-15-1c337646f29875672b5a61192b9010f9-jpg.jpg">
-        <h3>Video Wallpaper 01</h3>
-        <div class="tag">Instant unlock after payment</div>
-        <button onclick="pay('wp1')">Unlock Now</button>
-      </div>
-
-      <!-- PRODUCT 2 -->
-      <div class="card">
-        <div class="lock">🔒</div>
-        <div class="badge">₹9</div>
-        <img src="https://i.postimg.cc/1RJVvrgf/Screenshot-2026-02-06-12-36-10-93-99c04817c0de5652397fc8b56c3b3817-jpg.jpg">
-        <h3>Video Wallpaper 02</h3>
-        <div class="tag">Instant unlock after payment</div>
-        <button onclick="pay('wp2')">Unlock Now</button>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="footer">
-    © The Crease Club • Digital Drops
+<section class="hero">
+  <div class="hero-content">
+    <h1>THE CREASE CLUB</h1>
+    <p>Premium Motion Wallpapers • Members Only</p>
+    <button class="hero-btn" onclick="document.getElementById('products').scrollIntoView()">
+      Explore Drops
+    </button>
   </div>
+</section>
+
+<section class="section" id="products">
+  <h2>Video Wallpapers</h2>
+
+  <div class="grid">
+
+    <!-- PRODUCT 1 -->
+    <div class="card">
+      <div class="lock">🔒</div>
+      <div class="badge">₹9</div>
+      <img src="https://i.postimg.cc/XY3MXd8y/Screenshot-2026-02-06-12-35-19-15-1c337646f29875672b5a61192b9010f9-jpg.jpg">
+      <h3>Video Wallpaper 01</h3>
+      <div class="tag">Instant unlock after payment</div>
+      <button onclick="pay('wp1')">Unlock Now</button>
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="card">
+      <div class="lock">🔒</div>
+      <div class="badge">₹9</div>
+      <img src="https://i.postimg.cc/1RJVvrgf/Screenshot-2026-02-06-12-36-10-93-99c04817c0de5652397fc8b56c3b3817-jpg.jpg">
+      <h3>Video Wallpaper 02</h3>
+      <div class="tag">Instant unlock after payment</div>
+      <button onclick="pay('wp2')">Unlock Now</button>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="card">
+      <div class="lock">🔒</div>
+      <div class="badge">₹9</div>
+      <img src="https://image2url.com/r2/default/images/1770551334283-353cff1a-5a63-49f6-b0a8-20e28bf7e3be.jpeg">
+      <h3>Charging Animation</h3>
+      <div class="tag">Premium charging screen effect</div>
+      <button onclick="pay('charge')">Unlock Now</button>
+      <button onclick="openGuide()">Setup Guide</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="footer">
+  © The Crease Club • Digital Drops
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="guideModal">
+  <div class="modal-box">
+    <span class="close" onclick="closeGuide()">✕</span>
+    <h3>Charging Animation Setup</h3>
+    <p>
+      1. Download <b>Guru Charging Animation</b> app from Play Store.<br><br>
+      2. Unlock your animation by paying a small fee on this page.<br><br>
+      3. Open the app → Tap <b>DIY</b> (bottom right) → Tap <b>+</b> icon.<br><br>
+      4. Add the animation and follow the 3-step tutorial inside the app.<br><br>
+      You're done. Enjoy your premium charging screen.
+    </p>
+  </div>
+</div>
 
 <script>
+function openGuide(){
+  document.getElementById("guideModal").style.display = "flex";
+}
+function closeGuide(){
+  document.getElementById("guideModal").style.display = "none";
+}
+
 async function pay(productId) {
 const res = await fetch("https://thecreaseclub.onrender.com/create-order", {
     method: "POST",
@@ -246,8 +304,12 @@ const res = await fetch("https://thecreaseclub.onrender.com/create-order", {
     handler: function () {
       if (productId === "wp1") {
         window.location.href = "https://drive.google.com/uc?export=download&id=1fSo63TknWfDtHBtejEjW9NhOjUwS9QFC";
-      } else {
+      } 
+      else if (productId === "wp2") {
         window.location.href = "https://drive.google.com/uc?export=download&id=19DUGSpcupPNzEkMNUl3RKYK9LIJ_EgW1";
+      }
+      else if (productId === "charge") {
+        window.location.href = "https://drive.google.com/file/d/1b2GFJa_N_szdgYo_X2z9oAGe4ltVloHl/view?usp=sharing";
       }
     },
 
